@@ -12,47 +12,51 @@
 body {
     font-family: 'StudioSim', sans-serif;
     background-color: #1a1a1a;
-    color: white;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    /* This prevents the body itself from ever showing a second scrollbar */
+    overflow: hidden; 
+	color: white;
 }
 
 h1 {
-	font-size: 1000%
+	font-size: 800%;
+	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 1));
+	color: white;
 }
 
 p {
-	font-size: 500%
+	font-size: 500%;
+	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 1));
+	color: white;
 }
 
 .parallax-wrapper {
     height: 100vh;
+    width: 100vw; 
     overflow-x: hidden;
     overflow-y: auto;
-    perspective: 10px; /* Creates the 3D space */
+    perspective: 10px;
 }
 
 .parallax-header {
+    width: 100%;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
     transform-style: preserve-3d;
-    z-index: -10;
+    /* Ensures no phantom gaps at the edges */
+    position: relative;
 }
 
 .layer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%; 
     height: 100%;
     background-size: cover;
     background-position: top center;
-	background-repeat: no-repeat;
+    background-repeat: no-repeat;
 }
-
-/* Formula for Scale: 1 + (translateZ * -1) / perspective 
-   This keeps the image looking its original size while moved back.
-*/
 
 .layer-bg {
     background-image: url('bg_sky.png'); 
@@ -120,10 +124,51 @@ p {
 
 .layer-road {
     background-image: url('bg_road.png');
-    transform: translateZ(0) translateY(0%); /* Moves at normal speed */
+    transform: translateZ(0) translateY(0%);
 	image-rendering: pixelated;
 }
 
+.layer-skater {
+    background-image: url('skater.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    width: 196px;
+    height: 234px; 
+    top: auto;
+    bottom: 15%;
+    
+    transform: translateZ(0); 
+    
+    animation: skate-across 20s linear infinite;
+    z-index: 5; 
+}
+
+@keyframes skate-across {
+    0% {
+        left: -200px;
+        transform: translateZ(0) scaleX(1);
+    }
+    30% {
+        left: 110%;
+        transform: translateZ(0) scaleX(1);
+    }
+	
+    50% {
+        left: 110%;
+        transform: translateZ(0) scaleX(-1);
+    }
+	
+    90% {
+        left: -200px;
+        transform: translateZ(0) scaleX(-1);
+    }
+    100% {
+        left: -200px;
+        transform: translateZ(0) scaleX(1);
+    }
+}
 
 .title {
     font-size: 5rem;
@@ -132,11 +177,38 @@ p {
 }
 
 .content {
-    background: #111111;
+	background-image: url("grass.png");
     margin-top: 0;
     padding: 3rem;
     position: relative;
 	transform: translateZ(0) translateY(0%);
+	min-height: 100vh;
+}
+
+.layer-skelly1 {
+	position: absolute;
+    background-image: url('skelly1.png');
+    transform: translateZ(1);
+	image-rendering: pixelated;
+	background-size: contain;
+	width: 140px;
+	height: 131px;
+	top: 400px;
+	left: 5%;
+	opacity: 0.5;
+}
+
+.layer-skelly2 {
+	position: absolute;
+    background-image: url('skelly2.png');
+    transform: translateZ(1);
+	image-rendering: pixelated;
+	background-size: contain;
+	width: 140px;
+	height: 131px;
+	top: 475px;
+	left: 80%;
+	opacity: 0.5;
 }
 
 .grid {
@@ -151,4 +223,14 @@ p {
     padding: 2rem;
     text-align: center;
     border-radius: 8px;
+}
+
+.parallax-wrapper::-webkit-scrollbar {
+    width: 12px;
+}
+.parallax-wrapper::-webkit-scrollbar-track {
+    background: #000; 
+}
+.parallax-wrapper::-webkit-scrollbar-thumb {
+    background: #333;
 }
