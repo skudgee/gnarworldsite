@@ -1,2 +1,2 @@
-# gnarworldgame.github.io
+# gnar world
 website
