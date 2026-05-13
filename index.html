@@ -1,111 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corndog Games</title>
-	<style>
-* {
-    margin: 0;
-	margin-top: 25px;
-    margin-bottom: 30px;
-    padding: 0;
-    box-sizing: border-box;
-	image-rendering: pixelated;
-}
-
-body {
-    font-family: sans-serif;
-    background-color: #FFFFFF;
-    margin: 0;
-    padding: 25px;
-	color: black;
-}
-
-h1 {
-	font-size: 500%;
-	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 1));
-	color: black;
-}
-
-h1 a {
-    text-decoration: none;
-    color: black;
-    display: inline-block;
-    transition: transform 0.1s;
-}
-
-h1 a:hover {
-    animation: glitch 0.3s infinite;
-}
-
-@keyframes glitch {
-    0%   { transform: translate(0); filter: drop-shadow(2px 0 #ff0000) drop-shadow(-2px 0 #00ffff); }
-    25%  { transform: translate(-3px, 1px); filter: drop-shadow(-2px 0 #ff0000) drop-shadow(2px 0 #00ffff); }
-    50%  { transform: translate(3px, -1px); filter: drop-shadow(2px 2px #ff00ff) drop-shadow(-2px 0 #00ff00); }
-    75%  { transform: translate(-1px, 2px); filter: drop-shadow(-3px 0 #ff0000) drop-shadow(3px 0 #00ffff); }
-    100% { transform: translate(0); filter: drop-shadow(2px 0 #ff0000) drop-shadow(-2px 0 #00ffff); }
-}
-
-p {
-	font-size: 180%;
-	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
-	color: black;
-}
-
-img {
-    animation: rock 8s ease-in-out infinite;
-    cursor: pointer;
-}
-
-img.spinning {
-    animation: spin 1.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes rock {
-    0%   { transform: rotate(-10deg); }
-    50%  { transform: rotate(10deg); }
-    100% { transform: rotate(-10deg); }
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
-	</style>
+    <title>Gnar World</title>
+    <link rel="stylesheet" href="gnar_style.css">
 </head>
 <body>
 
-	<center>
-	<img src="corndog.png" alt="corndog games" style="width: 80%" id="corndog"><br>
-	<p>welcome to Corndog Games : )</p>
-	<p>we are 2 people making</p> 
-	<h1><a href="https://www.gnarworldgame.com">GNAR<br>WORLD</a></h1>
-	<p>a 2.5D skateboarding video game</p>
-	<br>
-	<p><a href="mailto:corndog@corndog.games">contact</a></p>
-	</center>
-	
-	<!-- 
-	<div class="grid">
-		<div class="item">Link 1</div>
-		<div class="item">Link 2</div>
-		<div class="item">Image Placeholder</div>
-	</div>
-	-->
-			
+    <div class="parallax-wrapper">
+        <header class="parallax-header">
+            <div class="layer layer-bg"></div>
+            <div class="layer layer-beach"></div>
+            <div class="layer layer-fair"></div>
+            <div class="layer layer-casino"></div>
+            <div class="layer layer-art"></div>
+            <div class="layer layer-zoo"></div>
+            <div class="layer layer-sewer"></div>
+            <div class="layer layer-title-gnar"></div>
+            <div class="layer layer-title-world"></div>
+            <div class="layer layer-road"></div>
+			<div class="layer layer-skater"></div>
+            <!-- <h1 class="title">GNAR WORLD</h1> -->
+        </header>
 
-<script>
-const corndog = document.getElementById('corndog');
-corndog.addEventListener('click', () => {
-    corndog.classList.add('spinning');
-    corndog.addEventListener('animationend', () => {
-        setTimeout(() => {
-            corndog.classList.remove('spinning');
-        }, 100);
-    }, { once: true });
-});
-</script>
+        <main class="content">
+			<div class="layer layer-skelly1"></div>
+			<div class="layer layer-skelly2"></div>
+			<center>
+            <h1>COMING<br>SOON<br><br>
+            GNAR WORLD</h1><br>
+			<img src="christ.gif" alt="christ air"><br>
+			<p>a skateboarding<br>video game<br>
+			<br>
+			<br>
+			<a href="https://www.corndog.games/">corndog<br>games<br></a></p>
+			<a href="https://www.corndog.games/"><img src="corndog.png" alt="picture of a corndog goes here :)"></a>
+			</center>
+			
+            <!-- 
+            <div class="grid">
+                <div class="item">Link 1</div>
+                <div class="item">Link 2</div>
+                <div class="item">Image Placeholder</div>
+            </div>
+			-->
+			
+        </main>
+    </div>
 
 </body>
 </html>
