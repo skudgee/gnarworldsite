@@ -1,7 +1,8 @@
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+	image-rendering: pixelated;
 }
 
 @font-face {
@@ -61,51 +62,43 @@ p {
 .layer-bg {
     background-image: url('bg_sky.png'); 
     transform: translateZ(-40px) scale(5); 
-	image-rendering: pixelated;
 }
 
 .layer-beach {
     background-image: url('bg_beach.png');
     transform: translateZ(-30px) translateY(1%) scale(4); 
-	image-rendering: pixelated;
 }
 
 .layer-fair {
     background-image: url('bg_fair.png');
     transform: translateZ(-25px) translateY(25%) scale(3.5);
-	image-rendering: pixelated;
 }
 
 
 .layer-casino {
     background-image: url('bg_casino.png');
     transform: translateZ(-20px) translateY(-25%) scale(3);
-	image-rendering: pixelated;
 }
 
 
 .layer-art {
     background-image: url('bg_art.png');
     transform: translateZ(-20px) translateY(5%) scale(3);
-	image-rendering: pixelated;
 }
 
 .layer-zoo {
     background-image: url('bg_zoo.png');
     transform: translateZ(-15px) translateY(15%) scale(2.5);
-	image-rendering: pixelated;
 }
 
 .layer-sewer {
     background-image: url('bg_sewer.png');
     transform: translateZ(-10px) translateY(20%) scale(2);
-	image-rendering: pixelated;
 }
 
 .layer-title-world {
     background-image: url('title_world.png');
     transform: translateZ(-5px) translateY(-10%) translateX(20%) scale(.6);
-	image-rendering: pixelated;
 	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -115,7 +108,6 @@ p {
 .layer-title-gnar {
     background-image: url('title_gnar.png');
     transform: translateZ(-19px) translateY(-100%) scale(1.2);
-	image-rendering: pixelated;
 	filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -125,7 +117,6 @@ p {
 .layer-road {
     background-image: url('bg_road.png');
     transform: translateZ(0) translateY(0%);
-	image-rendering: pixelated;
 }
 
 .layer-skater {
@@ -189,7 +180,6 @@ p {
 	position: absolute;
     background-image: url('skelly1.png');
     transform: translateZ(1);
-	image-rendering: pixelated;
 	background-size: contain;
 	width: 140px;
 	height: 131px;
@@ -202,7 +192,6 @@ p {
 	position: absolute;
     background-image: url('skelly2.png');
     transform: translateZ(1);
-	image-rendering: pixelated;
 	background-size: contain;
 	width: 140px;
 	height: 131px;
